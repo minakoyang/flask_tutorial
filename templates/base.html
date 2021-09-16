@@ -10,6 +10,9 @@
     {% endblock %}
 </head>
 <body>
+    {% for message in get_flashed_messages() %}
+		<div class="alert">{{ message }}</div>
+    {% endfor %}
     <h2>
         <img alt="Folders" class="folders" src="{{ url_for('static', filename='images/folders.ico') }}">
         {{ user.name }}'s Watchlist
